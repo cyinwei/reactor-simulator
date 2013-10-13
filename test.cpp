@@ -1,10 +1,10 @@
 #include "interactor.h"
-#include "slice_chart.h"
+//#include "slice_chart.h"
 using namespace std;
-
+#include <vtkPlotBar.h>
 int main(){try{
 	//declarations
-	vector<vtkSmartPointer<vtkFloatArray>> core_data;//---------------------holds data values-----------
+	vector<vtkSmartPointer<vtkFloatArray> > core_data;//---------------------holds data values-----------
 		core_data.reserve(663);
 	vtkSmartPointer<vtkPolyData> polydata =
 		vtkSmartPointer<vtkPolyData>::New();

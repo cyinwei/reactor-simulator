@@ -22,6 +22,28 @@
 #include <vtkProperty.h>
 #include <vtkStructuredGrid.h>
 #include<vector>
+
+
+#include <vtkAnimationCue.h>
+#include <vtkAnimationScene.h>
+#include <vtkCommand.h>
+#include <vtkCell.h>
+#include<vtkFloatArray.h>
+#include <vtkCellData.h>
+#include <vtkPolyDataMapper.h>
+#include <vtkMath.h>
+#include <vtkLookupTable.h>
+#include <vtkPolyData.h>
+#include <vtkRenderWindow.h>
+#include <vtkRenderWindowInteractor.h>
+#include <vtkRenderer.h>
+#include <vtkShrinkFilter.h>
+#include <vtkPolyData.h>
+#include <vtkSmartPointer.h>
+#include <vtkVersion.h>
+#include<vtkPointData.h>
+#include<vector>
+
 // This handles the slider
 // Callback for the interaction
 
@@ -55,5 +77,5 @@ public:
   char selector;
   //ignore this for now
   //vtkStructuredGrid *grid;
-  vector<vtkSmartPointer<vtkFloatArray>> v_Flar;
+  vector<vtkSmartPointer<vtkFloatArray> > v_Flar;
   };

@@ -20,21 +20,24 @@
 #include <vtkWeakPointer.h>
 #include <vtkWidgetEvent.h>
 #include <vtkWidgetEventTranslator.h>
-#include "Slider.h"
+//#include "Slider.h"
+#include"Animation.h"
 #include<vtkConeSource.h>
 #include<vtkCylinderSource.h>
 #include "make_cells.h"
 class Interactor{
 	public:
-		Interactor(vector<vtkSmartPointer<vtkFloatArray>>&core_data, vtkSmartPointer<vtkPolyData>&polydata,
+		Interactor(vector<vtkSmartPointer<vtkFloatArray> >&core_data, vtkSmartPointer<vtkPolyData>&polydata,
 			vtkSmartPointer<vtkPoints> &points,vtkSmartPointer<vtkCellArray>&cells,
 			vtkSmartPointer<vtkLookupTable>&cTable );
 		void sldr(vtkSmartPointer<vtkSliderRepresentation2D>&sliderRep);
 		void interact();//what actually builds window and structure
 		void axisptr(vtkSmartPointer<vtkRenderer> &renderer,vtkSmartPointer<vtkRenderWindowInteractor>& renwinint,vtkSmartPointer<vtkRenderWindow>&renwin,
 					 vtkSmartPointer<vtkAxesActor>& axes,vtkSmartPointer<vtkOrientationMarkerWidget>& o_widget);//small axis at the corner of window
+		vtkSmartPointer<vtkLookupTable> ct_for_bar();
+		void interact_animate();
 	private:
-		vector<vtkSmartPointer<vtkFloatArray>> c_data;//used to hold data
+		vector<vtkSmartPointer<vtkFloatArray> > c_data;//used to hold data
 		vtkSmartPointer<vtkPolyData> pdata;//polydata is the structure
 		vtkSmartPointer<vtkPoints> pnts;//points for poly data
 		vtkSmartPointer<vtkCellArray> cell_arr;//used to hold all cells for polydata
