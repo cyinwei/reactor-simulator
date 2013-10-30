@@ -1,9 +1,9 @@
 #include"slice_chart.h"
-//#include "Slider.h"
+#include "Slider.h"
 #include "make_cells.h"
 #include<vtkCubeSource.h>
 #include<vtkScalarBarActor.h>
-
+#include"Animation.h"
 //still testing dont worry about this now
 //Constructor
 slice_chart::slice_chart(vector<vtkSmartPointer<vtkFloatArray>>&core_data, vtkSmartPointer<vtkPolyData>&polydata,
@@ -277,6 +277,7 @@ void slice_chart::arrowfield_animate(){
     observer->pdata=pdata;
 	observer->mapper=mapper;
 	observer->actor=actor;
+	observer->is_scalar=false;
   // Create an Animation Cue.
 	vector<vtkSmartPointer<vtkAnimationCue>> Cues;
 	Cues.reserve(600);

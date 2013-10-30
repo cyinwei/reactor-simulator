@@ -1,9 +1,12 @@
-#include <vtkActor.h>
 #include <vtkAxesActor.h>
+#include <vtkActor.h>
+#include<vtkArrowSource.h>
+#include<vtkConeSource.h>
 #include <vtkCellArray.h>
+#include <vtkFloatArray.h>
+#include<vtkGlyph3D.h>
 #include <vtkInteractorStyleTrackballCamera.h>
 #include <vtkInteractorStyleTrackballActor.h>
-#include <vtkFloatArray.h>
 #include <vtkLookupTable.h>
 #include <vtkMultiThreader.h>
 #include <vtkOrientationMarkerWidget.h>
@@ -11,25 +14,20 @@
 #include <vtkPointData.h>
 #include <vtkPolyDataMapper.h>
 #include <vtkProperty.h>
-#include <vtkProperty2D.h>
-#include <vtkTextProperty.h>
 #include <vtkPolyData.h>
 #include <vtkPoints.h>
 #include <vtkRenderWindow.h>
 #include <vtkRenderer.h>
 #include <vtkRenderWindowInteractor.h>
 #include <vtkSmartPointer.h>
+#include <vtkSliderRepresentation2D.h>
 #include <vtkWeakPointer.h>
 #include <vtkWidgetEvent.h>
 #include <vtkWidgetEventTranslator.h>
-#include<vector>
-#include<vtkConeSource.h>
-#include<vtkCylinderSource.h>
-#include<vtkArrowSource.h>
-#include<vtkGlyph3D.h>
-#include<vtkSliderRepresentation2D.h>
-#include <vtkSliderWidget.h>
-#include"Animation.h"
+
+
+
+
 /*dont worry about this for now still building, it mirrors interactor but has a couple of differences since it makes a
 vector field vice using cells*/
 using namespace std;

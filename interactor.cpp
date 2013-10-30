@@ -1,4 +1,8 @@
 #include"interactor.h"
+#include "make_cells.h"
+#include "Slider.h"
+#include"Animation.h"
+using namespace std;
 //constructor, has choices in what to build
 Interactor::Interactor(vector<vtkSmartPointer<vtkFloatArray> >&core_data, vtkSmartPointer<vtkPolyData>&polydata,
 		vtkSmartPointer<vtkPoints> &points,vtkSmartPointer<vtkCellArray>&cells,
@@ -89,6 +93,7 @@ void Interactor::sldr(vtkSmartPointer<vtkSliderRepresentation2D>&sliderRep){
 	sliderRep->GetPoint2Coordinate()->SetCoordinateSystemToDisplay();
 	sliderRep->GetPoint2Coordinate()->SetValue(340, 300);
 }
+
 //makes window and structure
 void Interactor::interact(){
 	pdata->GetPointData()->SetScalars(c_data[0]);//set point values 
@@ -130,17 +135,11 @@ void Interactor::interact(){
 		vtkSmartPointer<vtkActor>::New();
 	actor->SetMapper(mapper);//map actor
 	actor->RotateX(270);//rotate
-	actor->RotateZ(-130);
-	
-	/*actor->RotateZ(-50);*/
-	actor->RotateX(-45);
-	actor->RotateY(30);
  //-------------------Visualize------------------------------------------------------------------
 	vtkSmartPointer<vtkRenderer> renderer = 
 		vtkSmartPointer<vtkRenderer>::New();
 	vtkSmartPointer<vtkRenderWindow> renderWindow = 
 		vtkSmartPointer<vtkRenderWindow>::New();
-	cout<<renderWindow->GetActualSize();
 	renderWindow->AddRenderer(renderer);
 	vtkSmartPointer<vtkRenderWindowInteractor> renderWindowInteractor = 
 		vtkSmartPointer<vtkRenderWindowInteractor>::New();
@@ -223,8 +222,6 @@ void Interactor::interact_animate(){
 		vtkSmartPointer<vtkActor>::New();
 	actor->SetMapper(mapper);//map actor
 	actor->RotateX(270);//rotate
-
-	
  //-------------------Visualize------------------------------------------------------------------
 	vtkSmartPointer<vtkRenderer> renderer = 
 		vtkSmartPointer<vtkRenderer>::New();
@@ -267,6 +264,7 @@ void Interactor::interact_animate(){
     observer->pdata=pdata;
 	observer->mapper=mapper;
 	observer->actor=actor;
+	observer->is_scalar=true;
   // Create an Animation Cue.
 	vector<vtkSmartPointer<vtkAnimationCue> > Cues;
 	Cues.reserve(600);

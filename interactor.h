@@ -17,14 +17,15 @@
 #include <vtkRenderer.h>
 #include <vtkRenderWindowInteractor.h>
 #include <vtkSmartPointer.h>
+#include <vtkSliderRepresentation2D.h>
 #include <vtkWeakPointer.h>
 #include <vtkWidgetEvent.h>
 #include <vtkWidgetEventTranslator.h>
-//#include "Slider.h"
-#include"Animation.h"
-#include<vtkConeSource.h>
-#include<vtkCylinderSource.h>
-#include "make_cells.h"
+
+
+using namespace std;
+
+
 class Interactor{
 	public:
 		Interactor(vector<vtkSmartPointer<vtkFloatArray> >&core_data, vtkSmartPointer<vtkPolyData>&polydata,

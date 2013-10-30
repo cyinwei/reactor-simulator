@@ -13,10 +13,13 @@
 #include <vtkProperty.h>
 #include <vtkPolyData.h>
 #include <vtkPoints.h>
+#include <vtkQuad.h>
 #include <vtkRenderWindow.h>
 #include <vtkRenderer.h>
 #include <vtkRenderWindowInteractor.h>
+#include<vtkScalarBarActor.h>
 #include <vtkSmartPointer.h>
+#include<vtkTextActor.h>
 #include <vtkWeakPointer.h>
 #include <vtkWidgetEvent.h>
 #include <vtkWidgetEventTranslator.h>
@@ -24,10 +27,6 @@
 #include<iostream>
 #include<string>
 #include<sstream>
-#include <vtkQuad.h>
-#include <vector>
-#include<vtkScalarBarActor.h>
-#include<vtkTextActor.h>
 using namespace std;
 
 class Rxbuild{
@@ -36,13 +35,12 @@ public:
 	Rxbuild(vector<vtkSmartPointer<vtkFloatArray> >& Farray){}//constructor
 	Rxbuild();//constructor
 	void point_build(vtkSmartPointer<vtkPoints>& points);//make points for interactor
-	//testing still
-	void point_slice(vtkSmartPointer<vtkPoints>& points,vector<vtkSmartPointer<vtkFloatArray> >& Farray,vtkSmartPointer<vtkCellArray>&cells,vtkSmartPointer<vtkPolyData> polyd);
-	//testing still
+	//for vector field
 	void point_slice_build(vtkSmartPointer<vtkPoints>& points,vector<vtkSmartPointer<vtkFloatArray> >& Farray,vtkSmartPointer<vtkCellArray>&cells,vtkSmartPointer<vtkPolyData> polyd);
 	
 	void get_data(const string& fname,vector<vector<double> > &transfer);//get data from files
 	void get_tuples(vector<vtkSmartPointer<vtkFloatArray> >& Farray);//put data into array points for interactor
+	//for vector field
 	void get_tuples_for_slice(vector<vtkSmartPointer<vtkFloatArray> >& Farray,int slice_sel);//put data into array for points for slice chart still testing
 	//makes cells for interactor
 	void make_box(int x[4],vtkSmartPointer<vtkCellArray> &cells);

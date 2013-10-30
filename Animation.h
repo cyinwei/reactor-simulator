@@ -1,4 +1,31 @@
-#include"Slider.h"
+#include <vtkActor.h>
+#include <vtkAnimationCue.h>
+#include <vtkAnimationScene.h>
+#include <vtkCallbackCommand.h>
+#include <vtkCell.h>
+#include <vtkCellData.h>
+#include <vtkCommand.h>
+#include<vtkFloatArray.h>
+#include <vtkInteractorStyleTrackballCamera.h>
+#include <vtkLookupTable.h>
+#include <vtkMath.h>
+#include <vtkPolyData.h>
+#include<vtkPointData.h>
+#include <vtkPolyDataMapper.h>
+#include <vtkProperty2D.h>
+#include <vtkProperty.h>
+#include <vtkRenderWindow.h>
+#include <vtkRenderer.h>
+#include <vtkRenderWindowInteractor.h>
+#include <vtkSliderWidget.h>
+#include <vtkSliderRepresentation2D.h>
+#include <vtkSmartPointer.h>
+#include <vtkSphereSource.h>
+#include <vtkTextProperty.h>
+#include <vtkWidgetEvent.h>
+#include <vtkWidgetEventTranslator.h>
+#include <vtkVersion.h>
+#include<vector>
 //-------------------------------------------------------------------------------------------------------------------
 
 class vtkAnimationCueObserver : public vtkCommand
@@ -41,8 +68,9 @@ public:
 	vtkRenderer *Renderer;
 	vtkRenderWindow *RenWin;
 	vtkLookupTable *coltable;
-	vector<vtkSmartPointer<vtkFloatArray> > Flar;
+	std::vector<vtkSmartPointer<vtkFloatArray> > Flar;
 	vtkPolyDataMapper *mapper;
+	bool is_scalar;
 	
 
 private:

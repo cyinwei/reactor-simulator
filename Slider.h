@@ -1,48 +1,36 @@
-#include <vtkSphereSource.h>
-#include <vtkTextProperty.h>
-#include <vtkProperty2D.h>
-#include <vtkSmartPointer.h>
-#include <vtkPolyData.h>
-#include <vtkSliderWidget.h>
-#include <vtkPolyDataMapper.h>
 #include <vtkActor.h>
-#include <vtkRenderWindow.h>
-#include <vtkRenderer.h>
-#include <vtkRenderWindowInteractor.h>
-#include <vtkPolyData.h>
-#include <vtkSmartPointer.h>
-#include <vtkSphereSource.h>
-#include <vtkCommand.h>
-#include <vtkWidgetEvent.h>
-#include <vtkCallbackCommand.h>
-#include <vtkWidgetEventTranslator.h>
-#include <vtkInteractorStyleTrackballCamera.h>
-#include <vtkSliderWidget.h>
-#include <vtkSliderRepresentation2D.h>
-#include <vtkProperty.h>
-#include <vtkStructuredGrid.h>
-#include<vector>
-
-
 #include <vtkAnimationCue.h>
 #include <vtkAnimationScene.h>
-#include <vtkCommand.h>
+#include <vtkCallbackCommand.h>
 #include <vtkCell.h>
-#include<vtkFloatArray.h>
 #include <vtkCellData.h>
-#include <vtkPolyDataMapper.h>
-#include <vtkMath.h>
+#include <vtkCommand.h>
+#include<vtkFloatArray.h>
+#include <vtkInteractorStyleTrackballCamera.h>
 #include <vtkLookupTable.h>
+#include <vtkMath.h>
 #include <vtkPolyData.h>
-#include <vtkRenderWindow.h>
-#include <vtkRenderWindowInteractor.h>
-#include <vtkRenderer.h>
-#include <vtkShrinkFilter.h>
-#include <vtkPolyData.h>
-#include <vtkSmartPointer.h>
-#include <vtkVersion.h>
 #include<vtkPointData.h>
+#include <vtkPolyDataMapper.h>
+#include <vtkProperty2D.h>
+#include <vtkProperty.h>
+#include <vtkRenderWindow.h>
+#include <vtkRenderer.h>
+#include <vtkRenderWindowInteractor.h>
+#include <vtkSliderWidget.h>
+#include <vtkSliderRepresentation2D.h>
+#include <vtkSmartPointer.h>
+#include <vtkSphereSource.h>
+#include <vtkTextProperty.h>
+#include <vtkWidgetEvent.h>
+#include <vtkWidgetEventTranslator.h>
+#include <vtkVersion.h>
 #include<vector>
+
+
+
+
+
 
 // This handles the slider
 // Callback for the interaction

@@ -7,19 +7,23 @@ vtkAnimationCueObserver::vtkAnimationCueObserver(){
 	this->RenWin=0;
 }
 void vtkAnimationCueObserver:: StartCue(){
-	if(start_chk==true){char t; cin>>t;
+	if(start_chk==true){
 	
 		start_chk=false;}
 	else{
-		pdata->GetPointData()->SetScalars(Flar[inc_scalar]);;
-				++inc_scalar;
-				if(inc_scalar%5==0)
+			if(is_scalar)
+				pdata->GetPointData()->SetScalars(Flar[inc_scalar]);
+			else
+				pdata->GetPointData()->SetVectors(Flar[inc_scalar]);
+			++inc_scalar;
+			if(inc_scalar%5==0)
 				Renderer->GetActiveCamera()->Azimuth(20.0);
-				pdata->Update();
-				Renderer->Render();
+			pdata->Update();
+			Renderer->Render();
 	
 	}
-	}
+}
+
 void vtkAnimationCueObserver:: Tick(){
 		//Renderer->ResetCamera();
     }

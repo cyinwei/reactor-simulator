@@ -1,7 +1,7 @@
 #include "interactor.h"
-//#include "slice_chart.h"
+#include "slice_chart.h"
 using namespace std;
-#include <vtkPlotBar.h>
+
 int main(){try{
 	//declarations
 	vector<vtkSmartPointer<vtkFloatArray> > core_data;//---------------------holds data values-----------
@@ -19,8 +19,17 @@ int main(){try{
 		vtkSmartPointer<vtkCellArray>::New(); 
 		cells->Allocate(16000);
 //two choices for now, interactor is the only one tested and working, see constructor of interactor for choices in what to build
-	Interactor(core_data,polydata,points,cells,cTable );
-	//slice_chart(core_data,polydata,points,cells);
+	char entry;
+	cout<<"Enter 'i' for normal Rx or 'a' for vector field slice\n";
+	cin>>entry;
+	switch(entry){
+	case 'i':
+		Interactor(core_data,polydata,points,cells,cTable ); break;
+	case 'a':
+		slice_chart(core_data,polydata,points,cells);break;
+	default:
+		cout<<"not an option, bye";break;
+	}
 	return EXIT_SUCCESS;
 }
 catch(exception& e){
