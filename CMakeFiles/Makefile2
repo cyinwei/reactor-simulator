@@ -47,13 +47,13 @@ RM = /usr/bin/cmake -E remove -f
 EQUALS = =
 
 # The program to use to edit the cache.
-CMAKE_EDIT_COMMAND = /usr/bin/ccmake
+CMAKE_EDIT_COMMAND = /usr/bin/cmake-gui
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/yinwei/Code/reactor-simulator
+CMAKE_SOURCE_DIR = /home/yinwei/Documents/Code/reactor-simulator
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/yinwei/Code/reactor-simulator
+CMAKE_BINARY_DIR = /home/yinwei/Documents/Code/reactor-simulator
 
 #=============================================================================
 # Target rules for target CMakeFiles/RelabSim.dir
@@ -62,7 +62,7 @@ CMAKE_BINARY_DIR = /home/yinwei/Code/reactor-simulator
 CMakeFiles/RelabSim.dir/all:
 	$(MAKE) -f CMakeFiles/RelabSim.dir/build.make CMakeFiles/RelabSim.dir/depend
 	$(MAKE) -f CMakeFiles/RelabSim.dir/build.make CMakeFiles/RelabSim.dir/build
-	$(CMAKE_COMMAND) -E cmake_progress_report /home/yinwei/Code/reactor-simulator/CMakeFiles  1 2 3 4 5 6 7
+	$(CMAKE_COMMAND) -E cmake_progress_report /home/yinwei/Documents/Code/reactor-simulator/CMakeFiles  1 2 3 4 5 6 7
 	@echo "Built target RelabSim"
 .PHONY : CMakeFiles/RelabSim.dir/all
 
@@ -72,9 +72,9 @@ all: CMakeFiles/RelabSim.dir/all
 
 # Build rule for subdir invocation for target.
 CMakeFiles/RelabSim.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/yinwei/Code/reactor-simulator/CMakeFiles 7
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/yinwei/Documents/Code/reactor-simulator/CMakeFiles 7
 	$(MAKE) -f CMakeFiles/Makefile2 CMakeFiles/RelabSim.dir/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/yinwei/Code/reactor-simulator/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/yinwei/Documents/Code/reactor-simulator/CMakeFiles 0
 .PHONY : CMakeFiles/RelabSim.dir/rule
 
 # Convenience name for target.

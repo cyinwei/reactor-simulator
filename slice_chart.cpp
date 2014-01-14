@@ -6,7 +6,7 @@
 #include"Animation.h"
 //still testing dont worry about this now
 //Constructor
-slice_chart::slice_chart(vector<vtkSmartPointer<vtkFloatArray>>&core_data, vtkSmartPointer<vtkPolyData>&polydata,
+slice_chart::slice_chart(vector<vtkSmartPointer<vtkFloatArray> >&core_data, vtkSmartPointer<vtkPolyData>&polydata,
 			vtkSmartPointer<vtkPoints> &points,vtkSmartPointer<vtkCellArray>&cells):c_data(core_data),pdata(polydata),pnts(points),
 				cell_arr(cells){
 					Rxbuild relap(c_data);
@@ -279,7 +279,7 @@ void slice_chart::arrowfield_animate(){
 	observer->actor=actor;
 	observer->is_scalar=false;
   // Create an Animation Cue.
-	vector<vtkSmartPointer<vtkAnimationCue>> Cues;
+	vector<vtkSmartPointer<vtkAnimationCue> > Cues;
 	Cues.reserve(600);
 	for(int i=0;i<663;++i){
 		vtkSmartPointer<vtkAnimationCue> cue1 =
